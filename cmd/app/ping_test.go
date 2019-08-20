@@ -31,7 +31,7 @@ func TestMain(m *testing.M) {
 }
 
 func thatTheScorekeeperServiceIsRunning() error {
-	return nil
+	return iCanPingTheScorekeeperService()
 }
 
 func iCanPingTheScorekeeperService() error {

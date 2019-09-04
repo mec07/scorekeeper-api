@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/DATA-DOG/godog"
+	"github.com/DATA-DOG/godog/colors"
 	"github.com/mec07/rununtil"
 	"github.com/pkg/errors"
 )
@@ -19,7 +20,8 @@ func TestMain(m *testing.M) {
 	status := godog.RunWithOptions("godog", func(s *godog.Suite) {
 		FeatureContext(s)
 	}, godog.Options{
-		Format:    "progress",
+		Format:    "pretty",
+		Output:    colors.Colored(os.Stdout),
 		Paths:     []string{"features"},
 		Randomize: time.Now().UTC().UnixNano(), // randomize scenario execution order
 	})
